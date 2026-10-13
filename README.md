@@ -1,9 +1,13 @@
 # AI-Powered Legal Assistant 🚀
 
+An AI-powered legal assistant that specializes in specific legal domains within a particular jurisdiction.
+
+This assistant will provide accurate legal information cited from the actual law(s) within the jurisdiction to users via WhatsApp.
+
 ## 🧭 Table of contents
 
-- [🌟 Overview]()
-    - [Project scope 🔭]()
+- [🌟 Overview](#-overview)
+    - [Project scope 🔭](#project-scope-)
 - [🛠️ My process]()
     - [Architecture 🏛️]()
     - [Built with 🧱]()
@@ -11,6 +15,19 @@
     - [Continued development 🌱]()
     - [Useful resources 📚]()
 - [👩🏽‍💻 Author](#-author)
+
+## 🌟 Overview
+
+### Project scope 🔭
+
+The components for this project include:
+
+    - Grounding data
+    - Vector database
+    - Large Language Model (LLM)
+    - LLM orchestrator
+    - Programming language i.e. Python
+    - WhatsApp integration
 
 ## 👩🏽‍💻 Author
 
