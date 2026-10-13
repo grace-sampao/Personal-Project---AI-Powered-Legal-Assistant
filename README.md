@@ -8,8 +8,8 @@ This assistant will provide accurate legal information cited from the actual law
 
 - [🌟 Overview](#-overview)
     - [Project scope 🔭](#project-scope-)
-- [🛠️ My process]()
-    - [Architecture 🏛️]()
+- [🛠️ My process](#️-my-process)
+    - [Architecture 🏛️](#architecture-️)
     - [Built with 🧱]()
     - [What I learned 🧠]()
     - [Continued development 🌱]()
@@ -22,12 +22,26 @@ This assistant will provide accurate legal information cited from the actual law
 
 The components for this project include:
 
-- Grounding data
+- Documents for grounding the data
 - Vector database
 - Large Language Model (LLM)
 - LLM orchestrator
 - Programming language i.e. `Python`
 - WhatsApp integration
+
+## 🛠️ My process
+
+### Architecture 🏛️
+
+```mermaid
+flowchart LR
+    client["`**CLIENT**<br>WhatsApp`"]
+    subgraph DATABASE
+        llm["`**LLM**`"]
+        document["`**DOCUMENT**`"]  
+    end
+    client -->|User Prompt| llm -->|System Prompt| document -->|Retrieval| llm -->|Response| client
+```
 
 ## 👩🏽‍💻 Author
 
