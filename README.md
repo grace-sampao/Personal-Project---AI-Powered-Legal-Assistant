@@ -22,12 +22,12 @@ This assistant will provide accurate legal information cited from the actual law
 
 The components for this project include:
 
-    - Grounding data
-    - Vector database
-    - Large Language Model (LLM)
-    - LLM orchestrator
-    - Programming language i.e. Python
-    - WhatsApp integration
+- Grounding data
+- Vector database
+- Large Language Model (LLM)
+- LLM orchestrator
+- Programming language i.e. `Python`
+- WhatsApp integration
 
 ## 👩🏽‍💻 Author
 
