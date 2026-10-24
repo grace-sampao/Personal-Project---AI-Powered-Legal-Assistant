@@ -40,11 +40,12 @@ agent = FunctionAgent(
     system_prompt=prompts.system_prompt,
 )
 
-async def main():
-    # Run the agent
-    response = await agent.run(prompts.user_prompt)
-    print(response)
+# def main():
+#     # Run the agent
+#     response = agent.run(prompts.user_prompt)
+    
+#     return response
 
 # Run the agent
-if __name__ == "__main__":
-    asyncio.run(main())
+# if __name__ == "__main__":
+#     asyncio.run(main())
