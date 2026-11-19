@@ -4,7 +4,7 @@ import chromadb
 client = chromadb.PersistentClient()
 collection = client.get_or_create_collection(name="my_collection")
 
-collection.upsert(
+collection.add(
     ids=["id1", "id2"],
     documents=[
         "This is a document about pineapples",
