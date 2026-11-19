@@ -20,6 +20,7 @@ dependencies = [
     { name = "fastapi", extra = ["standard"] },
     { name = "llama-index-embeddings-huggingface" },
     { name = "llama-index-llms-deepseek" },
+    { name = "llama-index-vector-stores-chroma" },
     { name = "python-dotenv" },
 ]
 
@@ -29,6 +30,7 @@ requires-dist = [
     { name = "fastapi", extras = ["standard"], specifier = ">=0.165.0" },
     { name = "llama-index-embeddings-huggingface", specifier = ">=0.9.0" },
     { name = "llama-index-llms-deepseek", specifier = ">=0.5.0" },
+    { name = "llama-index-vector-stores-chroma", specifier = ">=0.7.0" },
     { name = "python-dotenv", specifier = ">=1.2.4" },
 ]
 
@@ -1408,6 +1410,19 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/c4/fa/b2aa93945578d2e773699a3eeb2d4e5baa1f644778b005a6be404ae0a2f6/llama_index_llms_openai_like-0.9.0.tar.gz", hash = "sha256:ea0437f81da9f242e054aa2e3529f585dc06b44446139d6f4f790f6c1d7a2d47", size = 5378, upload-time = "2026-11-14T02:18:35.628Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/29/5b/98298de4291e6d6b27d55240d0ec944bfcbd9440c882b8afa4e1d45e05ef/llama_index_llms_openai_like-0.9.0-py3-none-any.whl", hash = "sha256:4e86a1d842cfc569948ee2b083d1c4b7d2fe325c9112ec681987b269c1dc4841", size = 6604, upload-time = "2026-11-14T02:18:34.674Z" },
+]
+
+[[package]]
+name = "llama-index-vector-stores-chroma"
+version = "0.7.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "chromadb" },
+    { name = "llama-index-core" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/ff/91/d055274a3aa843b76526f918846cf12671c14fceaf4d97090453201ab2de/llama_index_vector_stores_chroma-0.7.0.tar.gz", hash = "sha256:13cd4cf782be25cdbd772ccd7b05a8bc79eb4d41b32446a8e7e0d4b32245aa20", size = 8250, upload-time = "2026-11-14T02:36:53.868Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c0/f9/cb11c666a692be8a86e5203860dc5772a1f8147cd5e97f03094195f8d4e5/llama_index_vector_stores_chroma-0.7.0-py3-none-any.whl", hash = "sha256:bd5400a02842756aa3a7201ba27c8d8b9132620b8522e670683519f0dd75261d", size = 8074, upload-time = "2026-11-14T02:36:53.035Z" },
 ]
 
 [[package]]
