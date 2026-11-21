@@ -10,6 +10,7 @@ requires-python = ">=3.14"
 dependencies = [
     "chromadb>=1.5.9",
     "fastapi[standard]>=0.165.0",
+    "google-genai>=3.6.1",
     "llama-index-embeddings-huggingface>=0.9.0",
     "llama-index-llms-deepseek>=0.5.0",
     "python-dotenv>=1.2.4",
