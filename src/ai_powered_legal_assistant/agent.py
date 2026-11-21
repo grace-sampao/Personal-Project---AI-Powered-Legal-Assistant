@@ -1,10 +1,13 @@
 import os
 from dotenv import load_dotenv
 
-from llama_index.core import Settings, VectorStoreIndex, SimpleDirectoryReader
+from llama_index.core import Settings, VectorStoreIndex, SimpleDirectoryReader, StorageContext
 from llama_index.core.agent.workflow import FunctionAgent
 from llama_index.llms.deepseek import DeepSeek
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.vector_stores.chroma import ChromaVectorStore
+
+from . import vector_db
 
 
 load_dotenv()
@@ -25,28 +28,41 @@ class RAGAgentService:
 
         # 2. Load documents and build index
         documents = SimpleDirectoryReader(data_dir).load_data()
-        index = VectorStoreIndex.from_documents(documents)
+        
+        vector_store = ChromaVectorStore(chroma_collection=vector_db.collection)
+        storage_context = StorageContext.from_defaults(vector_store=vector_store)
+        
+        index = VectorStoreIndex.from_documents(
+            documents,
+            storage_context=storage_context,
+            embed_model=Settings.embed_model
+        )
+        
         self.chat_engine = index.as_chat_engine()
 
         # 3. Register tools bound to this instance
         self._setup_tools()
 
-        system_prompt = """
-        You are a legal assistant specializing in Dominican Republic legislation 
-        that covers civil, administrative and corporate law.
+        # system_prompt = """
+        # You are a legal assistant specializing in Dominican Republic legislation 
+        # that covers civil, administrative and corporate law.
         
-        You provide accurate, legal information to users cited from the document 
-        sources provided in the vector database.
+        # You provide accurate, legal information to users cited from the document 
+        # sources provided in the vector database.
 
-        Your process involves taking user queries and giving responses that are 
-        grounded in the Dominican Republic's laws stored in the documents in the 
-        vector database.
+        # Your process involves taking user queries and giving responses that are 
+        # grounded in the Dominican Republic's laws stored in the documents in the 
+        # vector database.
 
-        The source documents in the vector database are in the Spanish dialect 
-        spoken in the Dominican Republic. 
-        Both the user queries and your responses are in English therefore translating
-        the source documents from Spanish (Dominican Republic dialect) to English 
-        is a mandatory step.
+        # The source documents in the vector database are in the Spanish dialect 
+        # spoken in the Dominican Republic. 
+        # Both the user queries and your responses are in English therefore translating
+        # the source documents from Spanish (Dominican Republic dialect) to English 
+        # is a mandatory step.
+        # """
+        system_prompt = """
+        You are a helpful assistant that can perform calculations and search 
+        through documents to answer questions.
         """
 
         # 4. Initialize the Agent workflow
